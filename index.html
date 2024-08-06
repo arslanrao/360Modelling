@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Modelling | Visnet</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <style>
-        body { margin: 0; }
-        #scene { width: 100vw; height: 100vh; }
-    </style>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3D Modelling | Visnext</title>
+    <meta name="description" content="A POC for 3D Modelling! Visnext">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  </head>
+  <body>
     <a-scene>
-        <!-- Lighting -->
-        <a-light type="ambient" color="#ffffff"></a-light>
-        <a-light type="directional" position="5 5 5"></a-light>
+      <a-assets>
+        <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
-        <!-- Camera -->
-        <a-camera position="0 0 10" look-controls="pointerLockEnabled: true"></a-camera>
+        <!-- Images. -->
+        <img id="city" src="images/360.jpg">
+        <img id="city-thumb" src="images/360.jpg">
+        <img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+        <img id="cubes-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
+        <img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        <img id="sechelt-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+      </a-assets>
 
-        <!-- Planes with textures -->
-        <a-plane src="#office1" width="10" height="6" position="0 0 -5" rotation="0 0 0"></a-plane>
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#city"></a-sky>
 
+      <!-- Link template we will build. -->
+      <a-entity class="link"></a-entity>
 
-        <!-- Image Assets -->
-        <a-assets>
-            <img id="office1" src="images/360.jpg"> <!-- front -->
-        </a-assets>
+      <!-- Camera + Cursor. -->
+      <a-camera>
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+          animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+      </a-camera>
     </a-scene>
-</body>
+  </body>
 </html>
