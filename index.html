@@ -12,15 +12,20 @@
         <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
         <!-- Images. -->
-        <img id="city" src="images/PanoramicImage.png">
-        <img id="room" src="images/360.jpg">
+        <img id="museum1" src="images/PanoramicImage.png">
+        <img id="library1" src="images/library1.jpg">
+        <img id="room1" src="images/room1.jpg">
+        <img id="library2" src="images/library2.jpg">
+        <img id="room2" src="images/room2.jpg">
+
       </a-assets>
-
+  
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="20" src="#city"></a-sky>
-
-      <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#room" position="-15 0 -25" rotation="0 90 0"></a-sky>
+      <a-sky id="image-360" radius="20" src="#museum1"></a-sky>
+      <a-sky id="image-360" radius="10" src="#library1" position="-15 0 -25" rotation="0 90 0"></a-sky>
+      <a-sky id="image-360" radius="10" src="#library2" position="-15 0 -45" rotation="0 90 0"></a-sky>
+      <a-sky id="image-360" radius="10" src="#room1" position="-30 5 -38" rotation="0 90 0"></a-sky>
+      <!-- <a-sky id="image-360" radius="10" src="#room2" position="-30 0 -45" rotation="0 90 0"></a-sky> -->
 
       <!-- Link template we will build. -->
       <a-entity class="link"></a-entity>
